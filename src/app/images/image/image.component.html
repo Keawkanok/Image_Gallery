@@ -1,0 +1,43 @@
+<div class="card" style="width:25rem">
+  <div class="card-body">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="text-center">
+        <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div>
+        <!-- <progress class="progress is-info" [value]="pct" max="100"></progress> -->
+        <!-- Progress: {{ selectedImage?.progress }} % Complete -->
+
+      </div>
+      <div class="form-group">
+        <label for="">Select file to upload</label>
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+        <!-- <input type="file" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+      </div>
+      <div class="form-group">
+        <input class="form-control" formControlName="caption" placeholder="Photo title">
+        <!-- <input type="form-control" formControlName="caption" placeholder="Caption"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+      </div>
+      <div class="form-group">
+        <select formControlName="category" class="form-group">
+        <!-- สัตว์ -->
+        <option value="Animal">Animal (สัตว์)</option>
+        <!-- ยานพาหนะ -->
+        <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+        <!-- ฤดูกาล  -->
+        <option value="Season">season (ฤดูกาล)</option>
+        <!-- อาหาร -->
+        <option value="Food">food (อาหาร)</option>
+        <!-- ทะเล -->
+        <option value="Sea">sea (ทะเล)</option>
+
+      </select>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-success float-right">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,102 @@
+
+
+<!-- <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
+  <div  [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="30%"  *ngIf="imageList">
+    <div *ngFor="let i of rowIndexArray">
+      <div *ngIf="imageList[3 * i]">
+
+
+        <mat-card class="mat-elevation-z4" >
+          <img   [src]="imageList[3*i].imageUrl" alt="" class="imag-fluid">
+      <span  class="imagebox-desc">{{ imageList[3 * i].caption }}</span>
+
+    </mat-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+    <div class="col-sm">
+      One of three columns
+    </div>
+  </div>
+</div> -->
+<!-- <mat-card class="example-card">
+  <mat-card-header>
+    <div mat-card-avatar class="example-header-image"></div>
+    <mat-card-title>Shiba Inu</mat-card-title>
+    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+  </mat-card-header>
+  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
+  <mat-card-content>
+    <p>
+      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
+      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
+      bred for hunting.
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+</mat-card> -->
+
+
+  <div class="container" *ngIf="imageList">
+    <div *ngFor="let i of rowIndexArray">
+      <div class="row" *ngIf="imageList[3 * i]">
+        <!-- <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header> -->
+        <div class="col-sm">
+            <img [src]="imageList[3*i].imageUrl" alt="" class="imag-fluid">
+            <!-- <span class="imagebox-desc">{{ imageList[3 * i].caption }}</span> -->
+          </div>
+        <!-- </mat-card> -->
+          <div class="col-sm" *ngIf="imageList[3 * i + 1]">
+            <img [src]="imageList[3*i + 1].imageUrl" alt="" class="imag-fluid">
+
+          </div>
+          <div class="col-sm" *ngIf="imageList[3 * i + 2]">
+            <img [src]="imageList[3*i + 2].imageUrl" alt="" class="imag-fluid">
+
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+    <!-- <td *ngIf="imageList[3 * i + 1]">
+      <div class="imagebox">
+        <img   [src]="imageList[3*i + 1].imageUrl" alt="" class="imag-fluid">
+        <div>
+          <span  class="imagebox-desc">{{ imageList[3 * i + 1].caption }}</span>
+        </div>
+      </div>
+    </td>
+      <td *ngIf="imageList[3 * i + 2]">
+        <div class="imagebox">
+        <img  [src]="imageList[3*i + 2].imageUrl" alt="" class="imag-fluid">
+        <div>
+          <span  class="imagebox-desc">{{ imageList[3 * i + 2].caption }}</span>
+        </div>
+      </div>
+      </td> -->
+    <!-- </div>
+  </div> -->
+
+
+
+
+
