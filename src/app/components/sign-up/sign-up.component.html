@@ -1,0 +1,90 @@
+<app-nav></app-nav>
+
+
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+
+    </div>
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-white pb-5">
+              <div class="">
+                <span class="btn-inner--icon">
+                 <i>
+                   <img class="logo" src="../../../assets/img/imagegallery.png" alt="logo" >
+                   <p>Image Gallery</p>
+                  </i>
+                </span>
+              </div>
+              <div class="btn-wrapper text-center" style="margin-top: -60px;">
+                <!-- <a href="javascript:void(0)" class="btn btn-neutral btn-icon"> -->
+                  <span class="btn-inner--icon">
+                    <mat-icon >people</mat-icon>
+                  </span>
+                <!-- </a> -->
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+                <small>Or sign up with credentials</small>
+              </div>
+              <form role="form">
+
+                <!-- Create Email -->
+                <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><mat-icon>alternate_email</mat-icon></span>
+                    </div>
+
+                      <input class="form-control" placeholder="Email" type="email" #userEmail required (focus)="focus=true" (blur)="focus=false">
+
+                  </div>
+                </div>
+
+                <!-- Create Password -->
+                <div class="form-group" [ngClass]="{'focused':focus1===true}">
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span>
+                    </div>
+
+                      <input class="form-control" placeholder="Password" type="password" #userPwd required (focus)="focus1=true" (blur)="focus1=false" >
+
+                  </div>
+                </div>
+
+
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                </div>
+
+                <div class="text-center">
+                  <button type="button" class="btn btn-primary my-6"  (click)="authService.SignUp(userEmail.value, userPwd.value)">Create account</button>
+                  <!-- <button type="button"value="Sign Up" class="btn btn-primary my-6">Create account</button> -->
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href="javascript:void(0)" class="text-back">
+                <!-- <small [routerLink]="['/forgot-password']">Forgot password?</small> -->
+              </a>
+            </div>
+            <div class="col-6 text-right">
+              <a href="javascript:void(0)" class="text-back">
+                <small [routerLink]="['/sign-in']">Sign in</small>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+

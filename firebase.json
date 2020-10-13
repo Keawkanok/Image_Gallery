@@ -1,0 +1,19 @@
+{
+  "hosting": [
+    {
+      "target": "image-gallery",
+      "public": "dist/image-gallery",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ]
+    }
+  ]
+}

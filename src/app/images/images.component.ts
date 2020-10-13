@@ -1,4 +1,6 @@
-import { ImageService } from '../chared/image.service';
+import { ImageService } from '../chared/services/image.service';
+import { AuthService } from '../chared/services/auth.service';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,11 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ImagesComponent implements OnInit {
 
+  private imageUrl = '';
 
-  constructor(private service: ImageService) { }
+  constructor(public service: ImageService, private imageService: ImageService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.service.getImageDetailList();
+    // this.getImageUrl(this.route.snapshot.params['id']);
   }
+
+  // getImageUrl(key: string) {
+  //   this.imageService.getImage(key)
+  //   .then(image => this.imageUrl = image.url);
+  // }
 
 }

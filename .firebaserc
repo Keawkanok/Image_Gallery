@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "image-gallery-test-99c89": {
+      "hosting": {
+        "image-gallery": [
+          "image-gallery-test-99c89"
+        ]
+      }
+    }
+  }
+}

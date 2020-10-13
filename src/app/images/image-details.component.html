@@ -1,0 +1,15 @@
+<p>
+  image-details works!
+</p>
+
+
+
+<div *ngIf="imageList">
+  <div *ngFor="let i of rowIndexArray">
+    <!-- <div *ngIf="i.id == imageList[i].id"> -->
+      <img [src]="imageList[i.id].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" >
+    <!-- </div> -->
+  </div>
+</div>
+
+<!-- <router-outlet></router-outlet> -->

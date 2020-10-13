@@ -1,0 +1,69 @@
+
+  <mat-grid-list cols="2" rowHeight="2:1" *ngIf="imageList">
+    <mat-grid-tile *ngFor="let i of rowIndexArray">
+      <div *ngIf="imageList[1 / i]">
+        <div *ngIf="imageList[1 / i]">
+          <a class="navbar-brand" placement="bottom" [routerLink]="['/test']"target="_blank" tooltip="Image Gallery">
+            <!-- <span></span> -->
+            <!-- Image Gallery -->
+            <img [src]="imageList[2 / i].imageUrl" alt="" class="imag-fluid">
+          </a>
+        </div>
+      </div>
+    </mat-grid-tile>
+
+
+
+
+  <mat-grid-list cols="2" rowHeight="3:3" *ngIf="imageList">
+    <mat-grid-tile *ngFor="let i of rowIndexArray">
+
+          <a class="navbar-brand" placement="bottom" [routerLink]="[imageList[i].id]" target="_blank" >
+
+
+
+
+      <section class="section section-shaped section-lg">
+        <div class="container pt-lg-md">
+          <div class="row justify-content-center">
+            <div class="">
+              <div class="card bg-secondary shadow border-0" style="border-radius: 8px;">
+                <div class="card-header bg-white pb-5" style="border-radius: 8px;">
+
+                  <div class="" >
+                    <span class="btn-inner--icon" *ngIf="authService.userData as user">
+                    <i><p>Image Gallery</p></i>
+                    <i><p>{{user.uid}}</p></i>
+
+                     <!-- <h1><strong>{{(user.displayName) ? user.displayName : 'User'}}</strong></h1> -->
+                     <!-- <p>User ID: <strong>{{user.uid}}</strong></p> -->
+                    </span>
+                  </div>
+                  <div class="btn-wrapper "  >
+
+
+
+                    <!-- <img src="/src/assets/img/new_image.jpg" alt=""> -->
+                    <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;">
+
+                  </div>
+                </div>
+                <!-- <div class="card-body px-lg-5 py-lg-5">
+
+                  <form role="form">
+
+
+                  </form>
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+
+      </a>
+
+    </mat-grid-tile>
+    </mat-grid-list>
+

@@ -1,0 +1,380 @@
+<app-dashboard></app-dashboard>
+
+<div class="card" style="width:25rem">
+  <div class="card-body">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="text-center">
+        <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div>
+        <!-- <progress class="progress is-info" [value]="pct" max="100"></progress> -->
+        <!-- Progress: {{ selectedImage?.progress }} % Complete -->
+
+      </div>
+      <div class="form-group">
+        <label for="">Select file to upload</label>
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+        <!-- <input type="file" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" formControlName="caption" placeholder="Photo title">
+        <!-- <input type="form-control" formControlName="caption" placeholder="Caption"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select formControlName="category" class="form-group">
+        <!-- สัตว์ -->
+        <option value="Animal">Animal (สัตว์)</option>
+        <!-- ยานพาหนะ -->
+        <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+        <!-- ฤดูกาล  -->
+        <option value="Season">Season (ฤดูกาล)</option>
+        <!-- อาหาร -->
+        <option value="Food">Food (อาหาร)</option>
+        <!-- ทะเล -->
+        <option value="Sea">Sea (ทะเล)</option>
+
+      </select>
+      </div>
+      <!-- <div class="form-group" *ngIf="authService.userData as user">
+        <input formControlName="uid" type="hidden"  value="{{user.uid}}">
+        <p>User ID: <strong>{{user.uid}}</strong></p>
+      </div> -->
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success float-right">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <div *ngIf="percentage | async as percentag">
+  <div>uploading {{ percentag }}%</div>
+</div> -->
+
+
+
+<main>
+  <section class="section section-shaped section-lg">
+    <div class="shape shape-style-1 bg-gradient-default">
+    </div>
+
+    <div class="container pt-lg-md">
+      <div class="row justify-content-center">
+        <div class="col-lg-5">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-white">
+              <!-- <div class="text-muted text-center" >
+                <small>Sign in with</small>
+              </div> -->
+              <div class="">
+                <span class="btn-inner--icon">
+                 <!-- <i>
+                   <p>Image Gallery</p>
+                  </i> -->
+                </span>
+              </div>
+              <div class="text-center">
+                <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <!-- <div class="text-center text-muted mb-4">
+                <small>Or sign in with credentials</small>
+              </div> -->
+              <!-- <form role="form"> -->
+              <!-- <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)"> -->
+
+                <!-- Email -->
+                <div  class="form-group mb-3" >
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <!-- <span class="input-group-text"><mat-icon>alternate_email</mat-icon></span> -->
+                    </div>
+                    <div class="form-group ">
+                      <div class="container">
+                        <div class="form-group custom-file mb-3" >
+                          <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                          <input type="file" accept="image/*"  #fileUploader formControlName="imageUrl" (change)="showPreview($event)" class="form-control custom-file-input">
+                          <label class="form-control custom-file-label" for="customFile">Choose file</label>
+                          <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Password -->
+                <div class="form-group" >
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                    </div>
+                    <div class="form-group container">
+                      <form action="/action_page.php">
+                        <div class="custom-file mb-3">
+                          <input style="height: 35px;" class="form-control" formControlName="caption"placeholder="Photo title" >
+                          <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+                          </div>
+                        </form>
+                      </div>
+                  </div>
+                </div>
+
+                  <!-- Select -->
+                  <div class="form-group" >
+                    <div style="justify-content: center;" class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                          </div>
+                            <div class="form-group container">
+                                <select style="height: 35px;" formControlName="category"  class="form-group custom-select mb-3">
+                                  <!-- <option selected>Default Custom Select Menu</option> -->
+                                  <!-- สัตว์ -->
+                                  <option value="Animal">Animal (สัตว์)</option>
+                                  <!-- ยานพาหนะ -->
+                                  <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+                                  <!-- ฤดูกาล  -->
+                                  <option value="Season">Season (ฤดูกาล)</option>
+                                  <!-- อาหาร -->
+                                  <option value="Food">Food (อาหาร)</option>
+                                  <!-- ทะเล -->
+                                  <option value="Sea">Sea (ทะเล)</option>
+                                </select>
+                            </div>
+                        </div>
+                      </div>
+                    <div style="text-align: center;" class="form-group">
+                      <button  type="submit" class="btn btn-primary my-6" >Submit</button>
+                    </div>
+                <!-- </form> -->
+              <!-- </form> -->
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+  </section>
+</main>
+
+
+<main>
+  <section class="section section-shaped section-lg">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-header bg-white">
+                <div class="text-center">
+                  <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+                </div>
+              </div>
+              <div class="card-body px-lg-5 py-lg-5">
+
+                  <!-- Email -->
+                  <div  class="form-group mb-3" >
+                      <div class="form-group ">
+                        <div class="container">
+                          <div class="form-group custom-file mb-3" >
+                            <!-- <input type="file" class="custom-file-input" id="customFile"> -->
+                            <!-- <input type="file" accept="image/*"  #fileUploader formControlName="imageUrl" (change)="showPreview($event)" class="form-control custom-file-input"> -->
+                            <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+                            <!-- <label type="file"  class="form-control" ></label> -->
+
+                             <!-- <input type="file" class="custom-file-input" id="exampleInputFile">
+                            <label type="file" class="custom-file-label" for="exampleInputFile" data-browse="{Your button text}"></label> -->
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                <!-- Password -->
+                <div class="form-group" >
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                    </div>
+                    <div class="form-group container">
+                        <div class="custom-file mb-3">
+                          <input style="height: 35px;" class="form-control" formControlName="caption" placeholder="Photo title" >
+                          <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <!-- Select -->
+                  <div class="form-group" >
+                    <div style="justify-content: center;" class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                          </div>
+                            <div class="form-group container">
+                                <select style="height: 35px;" formControlName="category"  class="form-group custom-select mb-3">
+                                  <!-- <option selected>Default Custom Select Menu</option> -->
+                                  <!-- สัตว์ -->
+                                  <option value="Animal">Animal (สัตว์)</option>
+                                  <!-- ยานพาหนะ -->
+                                  <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+                                  <!-- ฤดูกาล  -->
+                                  <option value="Season">Season (ฤดูกาล)</option>
+                                  <!-- อาหาร -->
+                                  <option value="Food">Food (อาหาร)</option>
+                                  <!-- ทะเล -->
+                                  <option value="Sea">Sea (ทะเล)</option>
+                                </select>
+                            </div>
+                        </div>
+                      </div>
+                    <div style="text-align: center;" class="form-group">
+                      <button  type="submit" class="btn btn-primary my-6" >Submit</button>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>
+</main>
+
+
+
+<div class="card" style="width:25rem">
+  <div class="card-body">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="text-center">
+        <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+      </div>
+      <div>
+        <!-- <progress class="progress is-info" [value]="pct" max="100"></progress> -->
+        <!-- Progress: {{ selectedImage?.progress }} % Complete -->
+
+      </div>
+      <div class="form-group">
+        <label for="">Select file to upload</label>
+        <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+        <!-- <input type="file" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+      </div>
+
+      <div class="form-group">
+        <input class="form-control" formControlName="caption" placeholder="Photo title">
+        <!-- <input type="form-control" formControlName="caption" placeholder="Caption"> -->
+        <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+      </div>
+
+      <div class="form-group">
+        <select formControlName="category" class="form-group">
+        <!-- สัตว์ -->
+        <option value="Animal">Animal (สัตว์)</option>
+        <!-- ยานพาหนะ -->
+        <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+        <!-- ฤดูกาล  -->
+        <option value="Season">Season (ฤดูกาล)</option>
+        <!-- อาหาร -->
+        <option value="Food">Food (อาหาร)</option>
+        <!-- ทะเล -->
+        <option value="Sea">Sea (ทะเล)</option>
+
+      </select>
+      </div>
+      <!-- <div class="form-group" *ngIf="authService.userData as user">
+        <input formControlName="uid" type="hidden"  value="{{user.uid}}">
+        <p>User ID: <strong>{{user.uid}}</strong></p>
+      </div> -->
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-success float-right">Submit</button>
+      </div>
+    </form>
+  </div>
+</div>
+<!-- <div *ngIf="percentage | async as percentag">
+  <div>uploading {{ percentag }}%</div>
+</div> -->
+
+
+
+
+
+
+  <section class="section section-shaped section-lg">
+    <form [formGroup]="formTemplate" (submit)="onSubmit(formTemplate.value)">
+      <div class="container pt-lg-md">
+        <div class="row justify-content-center">
+          <div class="col-lg-5">
+            <div class="card bg-secondary shadow border-0">
+              <div class="card-header bg-white">
+                <div class="text-center">
+                  <img [src]="imgSrc" alt="" width="350px" height="250px" (click)="fileUploader.click()">
+                </div>
+              </div>
+              <div class="form-group card-body px-lg-5 py-lg-5">
+
+                  <!-- Email -->
+                  <div  class="form-group mb-3" >
+                      <div class="form-group ">
+                        <div class="container">
+                          <div class="form-group custom-file mb-3" >
+                            <input type="file" accept="image/*" class="form-control" #fileUploader formControlName="imageUrl" (change)="showPreview($event)">
+                            <div class="text-danger" *ngIf="isSubmitted && formControls.imageUrl.errors?.required">This field is required.</div>
+                          </div>
+                        </div>
+                      </div>
+                  </div>
+
+                <!-- Password -->
+                <div class="form-group" >
+                  <div style="justify-content: center;" class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                    </div>
+                    <div class="form-group container">
+                        <div class="custom-file mb-3">
+                          <input style="height: 35px;" class="form-control" formControlName="caption" placeholder="Photo title" >
+                          <div class="text-danger" *ngIf="isSubmitted && formControls.caption.errors?.required">This field is required.</div>
+                          </div>
+                      </div>
+                  </div>
+                </div>
+
+                  <!-- Select -->
+                  <div class="form-group" >
+                    <div style="margin-top: -19px;" class="input-group input-group-alternative">
+                      <div class="input-group-prepend">
+                        <!-- <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span> -->
+                          </div>
+                            <div class="form-group container">
+                                <select style="height: 35px;" formControlName="category"  class="form-group custom-select mb-3">
+                                  <!-- <option selected>Default Custom Select Menu</option> -->
+                                  <!-- สัตว์ -->
+                                  <option value="Animal">Animal (สัตว์)</option>
+                                  <!-- ยานพาหนะ -->
+                                  <option value="Vehicle">Vehicle (ยานพาหนะ)</option>
+                                  <!-- ฤดูกาล  -->
+                                  <option value="Season">Season (ฤดูกาล)</option>
+                                  <!-- อาหาร -->
+                                  <option value="Food">Food (อาหาร)</option>
+                                  <!-- ทะเล -->
+                                  <option value="Sea">Sea (ทะเล)</option>
+                                </select>
+                            </div>
+                        </div>
+                      </div>
+                    <div style="text-align: center;" class="form-group">
+                      <button  type="submit" class="btn btn-primary my-6" >Submit</button>
+                    </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </form>
+  </section>

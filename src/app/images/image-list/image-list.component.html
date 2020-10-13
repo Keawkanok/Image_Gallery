@@ -1,102 +1,64 @@
+<!-- <mat-grid-list cols="2" rowHeight="3:2" > -->
+  <!-- <img [src]="imageList[0].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
+  <!-- <a id="playlist" class="button" download='image.jpg' [href]="imageList[i].imageUrl" style="display: inline;">Download Me</a> -->
 
 
-<!-- <div class="content" fxLayout="row wrap" fxLayoutGap="16px grid">
-  <div  [fxFlex]="(100/gridColumns) + '%'" fxFlex.xs="100%" fxFlex.sm="30%"  *ngIf="imageList">
-    <div *ngFor="let i of rowIndexArray">
-      <div *ngIf="imageList[3 * i]">
+  <!-- <mat-grid-tile  > -->
+    <div *ngIf="imageList">
+      <div *ngFor="let i of rowIndexArray">
+        <!-- <a class="navbar-brand" placement="bottom" [routerLink]="[imageList[i].id]" target="_blank" > -->
+          <a class="navbar-brand" placement="bottom" [href]="imageList[i].imageUrl" target="_blank" >
 
+          <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
+          <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" #img > -->
+          <!-- <img [src]="imageList[1].caption" alt="" class="imag-fluid" style="border-radius: 8px;"> -->
+          <!-- <span class="imagebox-desc">{{imageList[i].caption}}</span> -->
+          <!-- <span></span> -->
+          <!-- Image Gallery -->
+          <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
+          </a>
+          <!-- <a id="playlist" class="button" download='{{ imageList[i].imageUrl }}' [href]="imageList[i].imageUrl" style="display: inline;">Download</a> -->
+          <!-- <a id="playlist" class="button" download='imagename.png' [href]="imageList[i].imageUrl" style="display: inline;">Download</a> -->
+          <!-- <p [src]="imageList[1].caption" alt="" class="imag-fluid" style="border-radius: 8px;"></p> -->
 
-        <mat-card class="mat-elevation-z4" >
-          <img   [src]="imageList[3*i].imageUrl" alt="" class="imag-fluid">
-      <span  class="imagebox-desc">{{ imageList[3 * i].caption }}</span>
+          <!-- <a href="IMAGE_URL" download="imagename.png"  style="display: inline;"></a> -->
+          <!-- <img src="IMAGE_URL" #img> -->
+          <!-- <a href="javascript:void(0);" (click)="downloadImage(img)">Download</a> -->
 
-    </mat-card>
-      </div>
-    </div>
-  </div>
-</div> -->
+          <!-- <a class="js-download-a-tag rd__button rd__button--download" download="" href="/photo/5222580/download/?search_query=&amp;tracking_id=y4ugqqmtwi" target="_blank" data-id="5222580">
+            <span>ดาวน์โหลดฟรี</span>
+          </a> -->
 
-<!-- <div class="container">
-  <div class="row">
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-    <div class="col-sm">
-      One of three columns
-    </div>
-  </div>
-</div> -->
-<!-- <mat-card class="example-card">
-  <mat-card-header>
-    <div mat-card-avatar class="example-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-  </mat-card-header>
-  <img mat-card-image src="https://material.angular.io/assets/img/examples/shiba2.jpg" alt="Photo of a Shiba Inu">
-  <mat-card-content>
-    <p>
-      The Shiba Inu is the smallest of the six original and distinct spitz breeds of dog from Japan.
-      A small, agile dog that copes very well with mountainous terrain, the Shiba Inu was originally
-      bred for hunting.
-    </p>
-  </mat-card-content>
-  <mat-card-actions>
-    <button mat-button>LIKE</button>
-    <button mat-button>SHARE</button>
-  </mat-card-actions>
-</mat-card> -->
-
-
-  <div class="container" *ngIf="imageList">
-    <div *ngFor="let i of rowIndexArray">
-      <div class="row" *ngIf="imageList[3 * i]">
-        <!-- <mat-card class="example-card">
-          <mat-card-header>
-            <div mat-card-avatar class="example-header-image"></div>
-            <mat-card-title>Shiba Inu</mat-card-title>
-            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-          </mat-card-header> -->
-        <div class="col-sm">
-            <img [src]="imageList[3*i].imageUrl" alt="" class="imag-fluid">
-            <!-- <span class="imagebox-desc">{{ imageList[3 * i].caption }}</span> -->
+          <!-- <a id="playlist" class="button" download='{{ imageList[0].imageUrl }}' href="" style="display: inline;">Download Me</a> -->
+        <!-- <div *ngIf="files$ | async as files; else loading">
+          <div *ngFor="let file of files" class="d-flex border px-2 py-1 mb-2 align-items-center">
+            <div class="card">
+              <div>{{file.name}}</div>
+              <div class="ml-auto">
+                  <a [href]="file.url" download={{file.name}} target="_blank">download</a>
+              </div>
+            </div>
           </div>
-        <!-- </mat-card> -->
-          <div class="col-sm" *ngIf="imageList[3 * i + 1]">
-            <img [src]="imageList[3*i + 1].imageUrl" alt="" class="imag-fluid">
-
+        </div> -->
+        <!-- <mat-card class="space-storage">
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-md-12">
+                <img class="card-content" [src]="imageList[i].imageUrl" alt=""  style="border-radius: 8px;">
+              </div>
+            </div>
           </div>
-          <div class="col-sm" *ngIf="imageList[3 * i + 2]">
-            <img [src]="imageList[3*i + 2].imageUrl" alt="" class="imag-fluid">
-
-          </div>
-      </div>
-    </div>
-  </div>
+        </mat-card> -->
 
 
-    <!-- <td *ngIf="imageList[3 * i + 1]">
-      <div class="imagebox">
-        <img   [src]="imageList[3*i + 1].imageUrl" alt="" class="imag-fluid">
-        <div>
-          <span  class="imagebox-desc">{{ imageList[3 * i + 1].caption }}</span>
-        </div>
-      </div>
-    </td>
-      <td *ngIf="imageList[3 * i + 2]">
-        <div class="imagebox">
-        <img  [src]="imageList[3*i + 2].imageUrl" alt="" class="imag-fluid">
-        <div>
-          <span  class="imagebox-desc">{{ imageList[3 * i + 2].caption }}</span>
-        </div>
-      </div>
-      </td> -->
-    <!-- </div>
-  </div> -->
+       <div class="col image mb-4">
+         <div class="card-post card-post--1">
+           <div class="card-post__image" style="width:170px;height:170px;margin-left:15px;">
+              <img class="card-content" [src]="imageList[i].imageUrl" alt=""  style="border-radius: 8px;">
 
-
-
+           </div>
+         </div>
+       </div>
+  <!-- </mat-grid-tile> -->
 
 

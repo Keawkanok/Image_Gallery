@@ -1,0 +1,24 @@
+<p>
+  image-lists works!
+</p>
+
+<div >
+  <div *ngForOf="let rowIndexArray">
+    <div *ngIf="imageList[rowIndexArray]">
+      <div >
+        <!-- <a class="navbar-brand" placement="bottom" [routerLink]="[imageList[i].id]" target="_blank" > -->
+          <!-- <span></span> -->
+          <!-- Image Gallery -->
+          <img [src]="imageList[rowIndexArray].imageUrl" alt="" class="imag-fluid">
+        <!-- </a> -->
+      </div>
+    </div>
+  </div>
+
+</div>
+
+
+
+
+
+
