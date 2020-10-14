@@ -1,3 +1,6 @@
+@charset 'utf-8';
+
+
 // img {
 //   height: 240px;
 //   width: 220px;
@@ -14,3 +17,40 @@
 //   background-color:#F7F7F7;
 
 // }
+
+img{
+  border-radius: 5px;
+  margin: 15px;
+  width: 350px;
+  height: 250px;
+
+}
+
+.over-lay{
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  float: left;
+  margin: 30px;
+}
+
+.over-lay-text{
+  position: absolute;
+  left:15px;
+  bottom: 35px;
+  background: rgb(0, 0, 0);
+  background: rgba(0, 0, 0, 0.5); /* Black see-through */
+  color: #f1f1f1;
+  width: 117%;
+  transition: .5s ease;
+  opacity:1;
+  color: white;
+  font-size: 15px;
+  padding: 10px;
+  text-align: center;
+  border-radius: 8px;
+}
+
+.download {
+  margin-left: 159px;
+}

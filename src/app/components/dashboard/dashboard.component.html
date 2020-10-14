@@ -7,7 +7,7 @@
       placement="bottom"
       [routerLink]="['/image/home']"
       target="_blank"
-      tooltip="Image Gallery">
+      >
         <!-- <span> IMG• </span> -->
         Image Gallery
       </a>
@@ -90,16 +90,16 @@
             <i class="fa fa-cogs d-lg-none d-xl-none"> </i> Getting started
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
-            <a class="dropdown-item" [routerLink]="['/upload']">
-              <i class="tim-icons icon-paper"> </i> Upload
+            <a class="dropdown-item" [routerLink]="['/image/home']" *ngIf="authService.userData as user">
+              <i class="fas fa-user-astronaut"> </i> {{ user.email }}
             </a>
-            <a class="dropdown-item" [routerLink]="['/sign-in']">
-              <div>
-                <!-- <mat-icon>account_circle</mat-icon> Sign in -->
-                  <a class="nav-link" (click)="authService.SignOut()">
-                    <i class="fas fa-sign-out-alt"></i>Log out
-                  </a>
-              </div>
+            <a class="dropdown-item" [routerLink]="['/upload']">
+              <i class="fas fa-upload"> </i> Upload
+            </a>
+            <a class="dropdown-item" [routerLink]="['/sign-in']" (click)="authService.SignOut()">
+              <!-- <a class="nav-link" (click)="authService.SignOut()"> -->
+                <i class="fas fa-sign-out-alt"></i> Log out
+              <!-- </a> -->
             </a>
             <!-- <a class="dropdown-item" [routerLink]="['/landing']">
               <i class="tim-icons icon-image-02"> </i> Landing Page

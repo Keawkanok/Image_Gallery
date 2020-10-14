@@ -35,7 +35,7 @@ export class ImageListComponent implements OnInit {
               public ngZone: NgZone,
               public afAuth: AngularFireAuth,
               private httpClient: HttpClient,
-              public afs: AngularFirestore)
+              public afs: AngularFirestore,)
               {}
 
   ngOnInit() {
@@ -50,17 +50,19 @@ export class ImageListComponent implements OnInit {
           return imageurl.payload.val();
         });
         this.imageList = list.map(item => {
-          // console.log("test", item.key);
+          console.log("test", item.key);
           return item.payload.val();
         });
         this.rowIndexArray = Array.from(Array( Math.ceil(this.imageList.length)).keys());
-        console.log(this.imageList[0].imageUrl);
-        console.log(this.imageList[0].caption);
+        // console.log(this.imageList[0].imageUrl);
+        // console.log(this.imageList);
+        // console.log(this.imageList[key].imageUrl);
+        // console.log(this.imageList[0].caption);
+        // console.log(this.imageList[0].id);
         // console.log(this.imageList);
         // this.rowIndexArray = Array.from(Array( Math.ceil(this.imageList.length / 4 )).keys());
 
-      }
-    );
+      });
   }
 
 
@@ -68,7 +70,7 @@ export class ImageListComponent implements OnInit {
     const imgUrl = img.src;
     console.log(imgUrl , ' imgUrl');
     const imgName = imgUrl.substr(imgUrl.lastIndexOf('/') + 1);
-    this.httpClient.get(imgUrl, {responseType: 'blob' as 'json'})
+    this.httpClient.get(imgUrl, {responseType: 'jpg' as 'json'})
     .subscribe((res: any) => {
       const file = new Blob([res], {type: res.type});
 
@@ -98,7 +100,6 @@ export class ImageListComponent implements OnInit {
       }, 100);
     });
   }
-
 
 
 

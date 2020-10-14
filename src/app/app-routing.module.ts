@@ -10,10 +10,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { AuthGuard } from './chared/guared/auth.guard';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { VerifyEmailComponent } from './components/verify-email/verify-email.component';
-import { HomeComponent } from './componentsShowImageHome/FirebaseImage/home/home.component';
-import {
-    FirebaseImageComponent
-} from './componentsShowImageHome/FirebaseImage/FirebaseImage.component';
+
 import { ShowComponent } from './images/show.component';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
 import { ImageDetailsComponent } from './images/image-details.component';
@@ -23,8 +20,9 @@ import { ImageListsComponent } from './images/image-list/image-lists.component';
 
 
 const routes: Routes = [
+ 
   // users
-  { path: 'image/home', redirectTo: 'image/home', pathMatch: 'full'},
+  { path: '', redirectTo: 'image/home', pathMatch: 'full'},
   { path: 'image/home/:id', component: ImageDetailComponent, canActivate: [AuthGuard] },
   { path: 'image', component: ImagesComponent , canActivate: [AuthGuard] , children: [
   { path: 'home', component: ImageListComponent,  canActivate: [AuthGuard] },
@@ -37,6 +35,7 @@ const routes: Routes = [
 
   { path: 'upload', component: ImageComponent , canActivate: [AuthGuard] },
 
+  // admin
   { path: '', redirectTo: 'show/image', pathMatch: 'full'},
   { path: 'show', component: ShowComponent , children: [
   { path: 'image', component: ImageListComponent },

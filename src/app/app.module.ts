@@ -19,7 +19,6 @@ import { AppComponent } from './app.component';
 import { ImagesComponent } from './images/images.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
-import { UploadComponent } from './upload/upload.component';
 import { ForgotPasswordComponent } from '../app/components/forgot-password/forgot-password.component';
 import { SignInComponent } from './components/sign-in/sign-in.component';
 import { SignUpComponent } from './components/sign-up/sign-up.component';
@@ -68,14 +67,13 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 
 // import { ComponentsModule } from './components-navbar/components-navbar.module';
-import { HomeComponent } from './componentsShowImageHome/FirebaseImage/home/home.component';
+
 import { ShowComponent } from './images/show.component';
 
 
 import { NbThemeModule, NbLayoutModule, NbSidebarModule, NbButtonModule, NbIconModule,
   NbInputModule, NbFormFieldModule   } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
-import { NavbaruserComponent } from './navbaruser/navbaruser.component';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ImageDetailsComponent } from './images/image-details.component';
@@ -88,16 +86,13 @@ import { ImageDetailsComponent } from './images/image-details.component';
       ImagesComponent,
       ImageComponent,
       ImageListComponent,
-      UploadComponent,
       NavComponent,
       SignInComponent,
       SignUpComponent,
       DashboardComponent,
       ForgotPasswordComponent,
       VerifyEmailComponent,
-      HomeComponent,
       ShowComponent,
-      NavbaruserComponent,
       ImageDetailComponent,
       ImageDetailsComponent
    ],

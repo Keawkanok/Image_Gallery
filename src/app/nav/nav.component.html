@@ -6,8 +6,7 @@
       class="navbar-brand"
       placement="bottom"
       [routerLink]="['/show/image']"
-      target="_blank"
-      tooltip="Image Gallery">
+      target="_blank">
         <!-- <span> IMG• </span> -->
         Image Gallery
       </a>
@@ -91,11 +90,11 @@
           </a>
           <div class="dropdown-menu dropdown-with-icons" *dropdownMenu>
             <a class="dropdown-item" [routerLink]="['/upload']">
-              <i class="tim-icons icon-paper"> </i> Upload
+              <i class="fas fa-upload"> </i> Upload
             </a>
             <a class="dropdown-item" [routerLink]="['/sign-in']">
               <div>
-                <mat-icon>account_circle</mat-icon> Sign in
+                <i class="fas fa-user-astronaut"> </i> Sign in
               </div>
             </a>
             <!-- <a class="dropdown-item" [routerLink]="['/landing']">

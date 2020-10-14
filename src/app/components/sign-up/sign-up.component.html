@@ -19,10 +19,10 @@
                   </i>
                 </span>
               </div>
-              <div class="btn-wrapper text-center" style="margin-top: -60px;">
+              <div class="btn-wrapper text-center" style="margin-top: -50px;">
                 <!-- <a href="javascript:void(0)" class="btn btn-neutral btn-icon"> -->
-                  <span class="btn-inner--icon">
-                    <mat-icon >people</mat-icon>
+                  <span class="btn-inner--icon" >
+                    <i class="fas fa-users" ></i>
                   </span>
                 <!-- </a> -->
               </div>
@@ -37,7 +37,7 @@
                 <div class="form-group mb-3" [ngClass]="{'focused':focus===true}">
                   <div style="justify-content: center;" class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><mat-icon>alternate_email</mat-icon></span>
+                      <span class="input-group-text"><i class="fas fa-at"></i></span>
                     </div>
 
                       <input class="form-control" placeholder="Email" type="email" #userEmail required (focus)="focus=true" (blur)="focus=false">
@@ -49,7 +49,7 @@
                 <div class="form-group" [ngClass]="{'focused':focus1===true}">
                   <div style="justify-content: center;" class="input-group input-group-alternative">
                     <div class="input-group-prepend">
-                      <span class="input-group-text"><mat-icon> vpn_key</mat-icon></span>
+                      <span class="input-group-text"><i class="fas fa-key"></i></span>
                     </div>
 
                       <input class="form-control" placeholder="Password" type="password" #userPwd required (focus)="focus1=true" (blur)="focus1=false" >

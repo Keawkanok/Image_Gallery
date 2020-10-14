@@ -1,14 +1,24 @@
-<!-- <mat-grid-list cols="2" rowHeight="3:2" > -->
-  <!-- <img [src]="imageList[0].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
-  <!-- <a id="playlist" class="button" download='image.jpg' [href]="imageList[i].imageUrl" style="display: inline;">Download Me</a> -->
 
 
-  <!-- <mat-grid-tile  > -->
-    <div *ngIf="imageList">
-      <div *ngFor="let i of rowIndexArray">
-        <!-- <a class="navbar-brand" placement="bottom" [routerLink]="[imageList[i].id]" target="_blank" > -->
-          <a class="navbar-brand" placement="bottom" [href]="imageList[i].imageUrl" target="_blank" >
+        <!-- <div *ngIf="authService.userData as user"> -->
+          <!-- <a class="navbar-brand" placement="bottom" [routerLink]="[imageList[i].id]" target="_blank" > -->
+            <!-- <a [href]="imageList[i].imageUrl" target="_blank" > -->
 
+
+          <div *ngIf="imageList">
+            <div *ngFor="let i of rowIndexArray">
+            <div class="over-lay">
+              <img [src]="imageList[i].imageUrl" alt="" style="border-radius: 8px;"  #img>
+              <div class="over-lay-text">{{imageList[i].caption}}</div>
+              <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->              <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->
+              <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" download="image.jpg"  >Download</a> </div>
+
+            </div>
+          </div>
+         </div>
+
+
+          <!-- </a> -->
           <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
           <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" #img > -->
           <!-- <img [src]="imageList[1].caption" alt="" class="imag-fluid" style="border-radius: 8px;"> -->
@@ -16,12 +26,11 @@
           <!-- <span></span> -->
           <!-- Image Gallery -->
           <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
-          </a>
+          <!-- </a> -->
           <!-- <a id="playlist" class="button" download='{{ imageList[i].imageUrl }}' [href]="imageList[i].imageUrl" style="display: inline;">Download</a> -->
           <!-- <a id="playlist" class="button" download='imagename.png' [href]="imageList[i].imageUrl" style="display: inline;">Download</a> -->
           <!-- <p [src]="imageList[1].caption" alt="" class="imag-fluid" style="border-radius: 8px;"></p> -->
 
-          <!-- <a href="IMAGE_URL" download="imagename.png"  style="display: inline;"></a> -->
           <!-- <img src="IMAGE_URL" #img> -->
           <!-- <a href="javascript:void(0);" (click)="downloadImage(img)">Download</a> -->
 
@@ -51,14 +60,7 @@
         </mat-card> -->
 
 
-       <div class="col image mb-4">
-         <div class="card-post card-post--1">
-           <div class="card-post__image" style="width:170px;height:170px;margin-left:15px;">
-              <img class="card-content" [src]="imageList[i].imageUrl" alt=""  style="border-radius: 8px;">
+          <!-- <span class="imagebox-desc">{{imageList[i].caption}}</span> -->
 
-           </div>
-         </div>
-       </div>
-  <!-- </mat-grid-tile> -->
 
 
