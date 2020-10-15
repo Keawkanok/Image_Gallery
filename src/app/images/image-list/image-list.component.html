@@ -7,17 +7,24 @@
 
           <div *ngIf="imageList">
             <div *ngFor="let i of rowIndexArray">
-            <div class="over-lay">
-              <img [src]="imageList[i].imageUrl" alt="" style="border-radius: 8px;"  #img>
-              <div class="over-lay-text">{{imageList[i].caption}}</div>
-              <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->              <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->
-              <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" download="image.jpg"  >Download</a> </div>
+              <div class="over-lay">
+                <a  placement="bottom" [href]="[imageList[i].imageUrl]" target="_blank">
 
+                <img [src]="imageList[i].imageUrl" alt="" style="border-radius: 8px;"  #img>
+                <div class="over-lay-text">{{imageList[i].caption}}</div>
+                <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="imageList[i].imageUrl"  >Download</a> </div>
+              </a>
             </div>
           </div>
-         </div>
+        </div>
+        <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->              <!-- <div class="download"> <a [href]="[imageList[i].imageUrl.jpg]" [download]="[imageList[i].caption]"  >Download</a> </div> -->
+        <!-- <div class="download"> <a [href]="[imageList[i].imageUrl]+'jpg'" download="image.jpg"  >Download</a> </div> -->
 
-
+        <!-- <div *ngIf="imageList">
+         <a  placement="bottom" [href]="imageList[1].imageUrl" target="_blank">
+          <img [src]="imageList[1].imageUrl" alt="" style="border-radius: 8px;"  #img>
+         </a>
+         </div> -->
           <!-- </a> -->
           <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" > -->
           <!-- <img [src]="imageList[i].imageUrl" alt="" class="imag-fluid" style="border-radius: 8px;" #img > -->

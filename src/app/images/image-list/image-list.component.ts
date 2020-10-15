@@ -23,7 +23,8 @@ export class ImageListComponent implements OnInit {
   rowIndexArray: any[];
   userProfileImg: any;
   imageUrls: any[];
-  jpg: string;
+  // jpg: string;
+
 
   // uploadPercentage$: Observable<number>;
   // files$: Observable<File[]>;
@@ -50,7 +51,7 @@ export class ImageListComponent implements OnInit {
           return imageurl.payload.val();
         });
         this.imageList = list.map(item => {
-          console.log("test", item.key);
+          // console.log("test", item.key);
           return item.payload.val();
         });
         this.rowIndexArray = Array.from(Array( Math.ceil(this.imageList.length)).keys());
@@ -100,7 +101,6 @@ export class ImageListComponent implements OnInit {
       }, 100);
     });
   }
-
 
 
 }

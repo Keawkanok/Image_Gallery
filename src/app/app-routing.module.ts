@@ -20,7 +20,7 @@ import { ImageListsComponent } from './images/image-list/image-lists.component';
 
 
 const routes: Routes = [
- 
+
   // users
   { path: '', redirectTo: 'image/home', pathMatch: 'full'},
   { path: 'image/home/:id', component: ImageDetailComponent, canActivate: [AuthGuard] },
