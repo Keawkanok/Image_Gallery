@@ -6,7 +6,7 @@ label {
 
 .form-control {
     font-size: $input-btn-font-size;
-
+    
     &:focus {
         &::placeholder {
             color: $input-focus-placeholder-color;
@@ -57,7 +57,7 @@ textarea[resize="horizontal"] {
     }
 }
 
-// Sizes
+// Sizes 
 
 .form-control-lg {
     font-size: $font-size-base;
@@ -65,7 +65,26 @@ textarea[resize="horizontal"] {
 
 // Validation
 
+.has-success,
+.has-danger {
+    position: relative;
 
+    &:after, {
+        width: 19px;
+        height: 19px;
+        line-height: 19px;
+        text-align: center;
+        font-family: 'NucleoIcons';
+        display: inline-block;
+        position: absolute;
+        right: 15px;
+        top: 2px;
+        transform: translateY(50%);
+        border-radius: 50%;
+        font-size: 9px;
+        opacity: 1;
+    }
+}
 
 .has-success {
     &:after {

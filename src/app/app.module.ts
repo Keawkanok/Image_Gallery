@@ -65,7 +65,6 @@ import { TooltipModule } from "ngx-bootstrap/tooltip";
 import { PopoverModule } from "ngx-bootstrap/popover";
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
-
 // import { ComponentsModule } from './components-navbar/components-navbar.module';
 
 import { ShowComponent } from './images/show.component';
@@ -77,8 +76,9 @@ import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
 // import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ImageDetailsComponent } from './images/image-details.component';
+import { TakepictureComponent } from './Takepicture/Takepicture.component';
 
-
+import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
@@ -94,7 +94,8 @@ import { ImageDetailsComponent } from './images/image-details.component';
       VerifyEmailComponent,
       ShowComponent,
       ImageDetailComponent,
-      ImageDetailsComponent
+      ImageDetailsComponent,
+      TakepictureComponent
    ],
   imports: [
       BrowserModule,
@@ -109,7 +110,7 @@ import { ImageDetailsComponent } from './images/image-details.component';
       AngularFirestoreModule,
       AngularFireAnalyticsModule,
       AngularFireAuthModule,
-
+      Ng2SearchPipeModule,
 
     MatSliderModule,
     MatToolbarModule,

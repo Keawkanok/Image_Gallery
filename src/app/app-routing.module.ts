@@ -15,6 +15,7 @@ import { ShowComponent } from './images/show.component';
 import { ImageDetailComponent } from './image-detail/image-detail.component';
 import { ImageDetailsComponent } from './images/image-details.component';
 import { ImageListsComponent } from './images/image-list/image-lists.component';
+import { TakepictureComponent } from './Takepicture/Takepicture.component';
 
 
 
@@ -51,6 +52,9 @@ const routes: Routes = [
   { path: 'tests' , component: ImageDetailsComponent , children: [
   { path: 'image', component: ImageListComponent },
 ]},
+
+  { path: 'picture', component: TakepictureComponent },
+
 
 
   { path: 'sign-in', component: SignInComponent },

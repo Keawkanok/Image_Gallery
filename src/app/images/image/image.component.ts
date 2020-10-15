@@ -56,8 +56,8 @@ formTemplate = new FormGroup({
 
 
   ngOnInit(){
-    // console.log(this.storage.ref('/8c50119c-1146-4a3c-9ff3-321d621e40da/Vehicle/yuvraj-singh-0L2Y19nsYmY-unsplash.jpg_1602179226166'));
-    // console.log('test');
+    console.log(this.storage.ref('/6LK1lJskGahYP0MpdU1l30sK8bn2/09700ae2-79fe-4d1e-8f3c-59e04e613faf/viktor-ritsvall-FWJinfDsIn8-unsplash.jpg_1602780848962'));
+    console.log('test');
     this.resetForm();
   }
 
@@ -91,10 +91,10 @@ formTemplate = new FormGroup({
             this.resetForm();
             console.log(filePath);
             // console.log(fileRef);
-          
+
             // console.log(this.selectedImage);
 
-            
+
             // console.log(this.storage);
           });
         })

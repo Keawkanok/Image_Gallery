@@ -2,6 +2,8 @@
   background: #5BCCF0;
   // background: #000000;
 }
+
+// @import url('https://fonts.googleapis.com/css2?family=Piedra&display=swap');
 mat-icon{
   margin-top: 10px;
 }
@@ -13,10 +15,19 @@ mat-icon{
 }
 
 .logo {
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 120px;
+  margin-top: -5px;
+
 }
 
 .navbar-brand {
   margin-left: 20px;
+  margin-top: 30px;
+  // font-family: 'Permanent Marker', cursive;
+  font-size: 30px;
+  // @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+  font-family: 'Great Vibes', cursive;
 }
+
+
